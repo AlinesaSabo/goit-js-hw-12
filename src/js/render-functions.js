@@ -1,4 +1,8 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 export function renderImageSearch({ hits }) {
+  const gallery = document.querySelector('.gallery');
   const markup = hits
     .map(
       ({
@@ -36,5 +40,5 @@ export function renderImageSearch({ hits }) {
     )
     .join('');
 
-  document.querySelector('.gallery').innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
